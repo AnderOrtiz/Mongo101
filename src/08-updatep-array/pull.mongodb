@@ -1,0 +1,19 @@
+use("platzi_store")
+
+//el dict vacio selecciona todos los elementos
+//$pull remueve el elemneto de el array
+// db.inventory.updateMany({},{
+//     $pull: {
+//         tags: "book"
+//     }
+// })
+
+
+//$in es un operador interno para buscar dentro del array
+db.inventory.updateMany({},{
+    $pull: {
+        tags: {
+            $in: ["appliance", "school"]
+        }
+    }
+})
