@@ -1,0 +1,12 @@
+use("platzi_store")
+
+db.products.updateOne(
+    {_id: ObjectId('661e0235267ced6c4ccfc921')},
+    {
+        $inc: {
+            price: 100
+        }
+    }
+)
+
+//los object id solo con la función ObjectId se puede modificar

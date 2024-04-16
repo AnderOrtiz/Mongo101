@@ -1,0 +1,17 @@
+use("platzi_store")
+
+db.products.updateOne(
+    // query, damos el id    
+    {_id: 2},
+    // change => operators
+    {
+        $set: {
+            name: 'changed name',
+            price: 3000,
+            //podemos agregar nuevos campos
+            tags: ['A', 'B', 'C']
+        }
+    }
+)
+
+//set resetea los campos y podemos añadir más
