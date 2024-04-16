@@ -1,0 +1,40 @@
+use("sample_training")
+
+
+// set agrega campos
+// db.zips.updateMany(
+//     query
+//     {city: "CLEVELAND"},
+//     update - operators
+//     {
+//         $set:{
+//             myAttr: "new data"
+//         }
+//     }
+// )
+
+
+// $rename modifica el nombre del atributo no el valor
+// db.zips.updateMany(
+//     query
+//     {city: "CLEVELAND"},
+//     update - operators
+//     {
+//         $rename: {
+//             myAttr: "my_data"
+//         }
+//     }
+// )
+
+
+//$unset va a eliminar un campo del documento
+db.zips.updateMany(
+    //query
+    {city: "CLEVELAND"},
+    //update - operators
+    {
+        $unset: {
+            my_data: ""
+        }
+    }
+)
