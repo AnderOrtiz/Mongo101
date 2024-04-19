@@ -1,0 +1,47 @@
+use("platzi_store")
+
+// $in, values(int) & arrays
+db.inventory.find({qty:{$in:[20, 25]}})
+// ^= $in retorna documentos con los campos pedidos
+db.inventory.find({tags:{ $in:["book", "electronics"]}})
+// ^= $in retorna documentos con los campos pedidos
+
+
+//$nin, values(int) & arrays
+db.inventory.find({qty: {$nin:[20, 25]}})
+// ^= $in retorna documentos que no tengan los campos pedidos
+db.inventory.find({tags:{ $nin:["book", "electronics"]}})
+// ^= $in retorna documentos que no tengan los campos pedidos
+
+
+db.inventory.find({tags:"book"}) 
+// ^= documentos con book en tags
+db.inventory.find({tags:["school", "book"]})
+// ^= Busca en los documentos school y book en es orden
+db.inventory.find({tags:["book", "school"]})
+// ^= Hay documentos con esos tags, pero no en ese orden
+
+
+// array $all
+db.inventory.find({tags:{ $all: ["school", "book"]}})
+// ^= Busca en los documentos school y book no importa el orden
+
+
+// $size
+db.inventory.find({tags:{ $size: 2}})
+// ^= todos los documentos con 2 elementos en tags
+
+
+// $elemMatch
+db.survey.find({results: {$elemMatch:{product: "xyz"}}})
+// ^= busca dentro de un documento dentro de un campo
+db.survey.find(
+    {results: {
+        $elemMatch:{
+            product: "xyz",
+            score: {$gte: 7}
+            }
+        }
+    }
+)
+// ^= busca dentro de un documento dentro de un campo
