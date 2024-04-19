@@ -1,0 +1,20 @@
+use("platzi_store")
+
+
+//db.inventory.find({"item.description":"Single line description."})
+// ^= busca la expresion single line description
+
+//db.inventory.find({"item.description": { $regex: /line/ }})
+// ^= $regex busca la expresion line
+
+// db.inventory.find({"item.description": {$regex: /LINE/i }})
+// ^= la "i" representa case sensitive off
+
+// db.inventory.find({"item.description": {$regex: /line$/i}})
+// ^= El "$" busca cuales tienen line al final del item.description
+
+// db.inventory.find({"item.description": {$regex: /^single/i}})
+// ^= El "^" busca cuales tienen single al principio del item.description
+
+db.inventory.find({"item.description": {$regex: /^s/im}})
+// ^= La "m" revisa si hay multi parrafo "/n"
