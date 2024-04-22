@@ -1,0 +1,40 @@
+use("sample_training")
+
+db.companies.find()
+
+// db.trips.find({"start station location.type": "Point"})
+// ^= hace consultas a subdocs
+
+// db.companies.find({
+//     "relationships.0.person.first_name": "Mark"
+// },{
+//     _id: 0,
+//     name: 1,
+//     relationships: 1
+// })
+
+// ^= el 0 es para acceder al primer subdoc de relationships
+
+
+// db.companies.find({
+//     relationships:{
+//         $elemMatch:{
+//             "person.first_name": "Mark"
+//         }
+//     }
+// }, {
+//     _id: 0,
+//     name: 1,
+//     relationships: 1
+// })
+
+db.companies.find({
+    $and:[
+        {number_of_employees:{$gte:5299}},
+        {number_of_employees:{$lte:300000}}
+    ]
+},{
+    _id: 0,
+    name: 1,
+    number_of_employees:1
+}).count()
