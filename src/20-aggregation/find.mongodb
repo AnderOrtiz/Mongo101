@@ -12,26 +12,23 @@ db.listingsAndReviews.findOne()
 //     {$project: {"reviews.reviewer_name": 1}},
 // ])
 
-// db.listingsAndReviews.aggregate([
-//     {$match: {amenities: "Wifi"}},
-//     {$project: {address: 1}},
-//     {$group: {_id: "$address.country", count: {$sum: 1}}},
-// ])
+db.listingsAndReviews.aggregate([
+    {$match: {amenities: "Wifi"}},
+    {$match: {amenities: "Laptop friendly workspace"},},
+    {$project: {address: 1}},
+    {$group: {_id: "$address.country", count: {$sum: 1}}},
+])
 
 
-db.listingsAndReviews.find({
-    $and:[
-        {beds: {$gt: 1}},
-        {$nor:[
-        {amenities:"Wifi"},
-        {amenities:"TV"},
-        {amenities: "Laptop friendly workspace"},
-        {amenities:"Smoking allowed"}
-    ]}
-    ]
+// db.listingsAndReviews.find({
+//     $and:[
+//         {beds: {$gt: 1}},
+//         {$nor:[
+//         {amenities:"Wifi"},
+//         {amenities:"TV"},
+//         {amenities: "Laptop friendly workspace"},
+//         {amenities:"Smoking allowed"}
+//     ]}
+//     ]
     
-},{
-    country:1,
-    amenities:1,
-    beds: 1
-})//.count()
+// })//.count()

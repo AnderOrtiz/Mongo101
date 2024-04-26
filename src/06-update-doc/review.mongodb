@@ -1,0 +1,9 @@
+use("review")
+
+db.persons.updateOne({
+    _id: ObjectId('6626e0be8d40950142ca421b')
+},{
+    $inc:{age: 2}
+})
+
+db.persons.findOne({_id: ObjectId('6626e0be8d40950142ca421b')})

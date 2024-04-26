@@ -1,6 +1,6 @@
 use("sample_training")
 
-//and implict
+// and implict
 // db.inspections.find({
 //     sector: "Tax Preparers - 891",
 //     result: "Unable to Locate"
@@ -26,24 +26,24 @@ use("sample_training")
 // }).count() //892
 
 
-// [{},{},{}]
-// db.inspections.find({
-//     $nor: [
-//         {sector:"Tax Preparers - 891"},
-//         {result:"Unable to Locate"}
-//     ]
-// }).count() //79155
+[{},{},{}]
+db.inspections.find({
+    $nor: [
+        {sector:"Tax Preparers - 891"},
+        {result:"Unable to Locate"}
+    ]
+}).count() //79155
 
 
-// db.inspections.find({
-//     $nor: [
-//         {result:"No Violation Issued"},
-//         {result:"Unable to Locate"}
-//     ]
-// },{
-//     result:1,
-//     _id: 0
-// })
+db.inspections.find({
+    $nor: [
+        {result:"No Violation Issued"},
+        {result:"Unable to Locate"}
+    ]
+},{
+    result:1,
+    _id: 0
+})
 
 
 db.inspections.find({

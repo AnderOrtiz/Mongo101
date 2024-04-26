@@ -1,0 +1,17 @@
+use("review")
+
+db.persons.find()
+
+db.persons.updateMany({},{
+    $pull: {
+        "intrested.books":{
+            $in:["anime", "action"]
+        }
+    }
+})
+
+// db.persons.updateMany({_id: ObjectId('6626e0be8d40950142ca4218')},{
+//     $push:{
+//         "intrested.books": "action"
+//     }
+// })

@@ -1,0 +1,15 @@
+use("review")
+
+db.persons.updateMany(
+    {age: 18},
+    
+    {
+        $inc:{
+            age: 2
+        }
+    }
+)
+
+db.persons.find({},{
+    age:1
+})

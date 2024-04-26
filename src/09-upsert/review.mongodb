@@ -1,0 +1,12 @@
+use("review")
+
+db.persons.find()
+
+
+db.persons.updateMany({},{
+    $push:{
+        "intrested.books": "ciencia fiction"
+    }
+},{
+    upsert:true // indica que si no está creado que lo cree 
+})

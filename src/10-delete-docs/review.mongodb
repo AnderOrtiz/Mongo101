@@ -1,0 +1,46 @@
+use("review")
+
+db.persons.find().count()
+
+
+// db.persons.deleteMany({age:19})
+
+// db.persons.find({
+//     age: 20
+// })
+
+// db.persons.find({
+//     "intrested.music":{$all:["rock"]}
+// })
+
+// db.persons.updateMany(
+//     {
+//         "intrested.sports": {
+//             $all: [
+//                 "basket"
+//             ]
+//         }
+//     },
+//     {
+//         $push: {
+//             "intrested.sports": "basketball"
+//         }
+//     }
+// )
+
+db.persons.updateMany(
+    {
+        "intrested.sports": {
+            $all: [
+                "basket"
+            ]
+        }
+    },
+    {
+        $pull: {
+            "intrested.sports": {
+                $in:["basket"]
+            }
+        }
+    }
+)

@@ -1,0 +1,28 @@
+use("platzi_store")
+
+//$in
+//db.inventory.find({qty:{$in:[20, 25]}})
+
+//$nin
+// db.inventory.find({tags:{$nin:["book", "appliance"]}})
+
+//$size
+// db.inventory.find({tags:{$size: 2}})
+
+//$elemMach
+// db.survey.find({results: {$elemMatch:{product: "xyz"}}})
+
+db.survey.find()
+
+// db.survey.find({results: {$elemMatch: {
+//     product: "xyz",
+//     score: {$gt:5}
+// }}})
+
+// use("review")    
+
+// db.persons.find()
+
+// db.persons.find({friends: {$elemMatch: {
+//     stanley: 17 
+// }}})

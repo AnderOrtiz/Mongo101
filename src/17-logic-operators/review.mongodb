@@ -1,0 +1,16 @@
+use("platzi_store")
+
+
+
+db.inventory.find({
+    $or:[
+        {qty: 25},
+        {qty: {$lte:20}}
+],
+    $and:[
+        {tags: {$in :["book"]}}
+    ],
+    $nor:[
+        {"item.description": {$regex: /first/i}}
+    ]
+})

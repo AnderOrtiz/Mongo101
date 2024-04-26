@@ -1,0 +1,15 @@
+use("review")
+
+db.persons.find()
+
+
+// db.persons.find({
+//     age: { $gt: 25 }
+// }, {
+//     age: 1
+// })
+
+db.persons.find(
+    {age:{$lt:25}},
+    {age: 1}
+)

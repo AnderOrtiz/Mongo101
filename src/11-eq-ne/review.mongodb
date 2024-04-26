@@ -1,0 +1,10 @@
+use("review")
+
+db.persons.find()
+
+
+db.persons.find(
+    // {name:"Anderson"},
+    // {name: {$ne:"Anderson"}},
+    {name:{$eq:"Anderson"}}.count
+)

@@ -1,0 +1,326 @@
+use("review")
+
+db.persons.drop()
+
+//[{}, {}, {}, {}]
+db.persons.insertMany([
+    {
+        name: "Anderson",
+        intrested: {
+            books:["action","anime", "fiction"],
+            music:["rock", "jazz", "romatic", "electronic"],
+            sports:["basket", "soccer", "running"],
+        },
+        age: 18,
+        friends: {
+            stanley: {
+                name: "Stanley",
+                age: 17,
+                intrested: {
+                    books:["action", "teenage", "fiction"],
+                    music:["rock", "regaeton", "pop", "electronic"],
+                    sports:["basket", "soccer"]
+                }
+            },
+            Daniel:{
+                name: "Daniel",
+                age: 17,
+                intrested: {
+                    anime: ["teenage", "shonen", "romantic", "school"]
+                }
+            }
+        }
+    },
+    {
+        "name": "Alice",
+        "interested": {
+            "books": ["fantasy", "mystery", "romance"],
+            "music": ["pop", "indie", "hip hop"],
+            "sports": ["swimming", "yoga", "dance"]
+        },
+        "age": 20,
+        "friends": {
+            "bob": {
+                "name": "Bob",
+                "age": 21,
+                "interested": {
+                    "books": ["thriller", "science fiction"],
+                    "music": ["rock", "metal", "punk"],
+                    "sports": ["football", "basketball"]
+                }
+            },
+            "claire": {
+                "name": "Claire",
+                "age": 19,
+                "interested": {
+                    "books": ["mystery", "teenage", "fantasy"],
+                    "music": ["pop", "electronic", "house"],
+                    "sports": ["soccer", "running"]
+                }
+            }
+        }
+    },
+    {
+        "name": "David",
+        "interested": {
+            "books": ["science fiction", "horror", "mystery"],
+            "music": ["classical", "ambient", "jazz"],
+            "sports": ["hiking", "climbing"]
+        },
+        "age": 25,
+        "friends": {
+            "emma": {
+                "name": "Emma",
+                "age": 26,
+                "interested": {
+                    "books": ["romance", "drama"],
+                    "music": ["pop", "folk", "country"],
+                    "sports": ["tennis", "cycling"]
+                }
+            },
+            "frank": {
+                "name": "Frank",
+                "age": 24,
+                "interested": {
+                    "books": ["thriller", "crime"],
+                    "music": ["rock", "metal", "punk"],
+                    "sports": ["basketball", "football"]
+                }
+            }
+        }
+    },
+    {
+        "name": "Elena",
+        "interested": {
+            "books": ["historical fiction", "biography"],
+            "music": ["pop", "electronic", "dance"],
+            "sports": ["volleyball", "yoga"]
+        },
+        "age": 22,
+        "friends": {
+            "george": {
+                "name": "George",
+                "age": 21,
+                "interested": {
+                    "books": ["science fiction", "fantasy"],
+                    "music": ["rock", "indie", "punk"],
+                    "sports": ["soccer", "basketball"]
+                }
+            },
+            "hannah": {
+                "name": "Hannah",
+                "age": 23,
+                "interested": {
+                    "books": ["romance", "teenage", "drama"],
+                    "music": ["pop", "r&b", "soul"],
+                    "sports": ["running", "cycling"]
+                }
+            }
+        }
+    },
+    {
+        "name": "John",
+        "interested": {
+            "books": ["science", "technology", "self-help"],
+            "music": ["classical", "jazz", "ambient"],
+            "sports": ["tennis", "golf"]
+        },
+        "age": 30,
+        "friends": {
+            "kate": {
+                "name": "Kate",
+                "age": 28,
+                "interested": {
+                    "books": ["psychology", "philosophy"],
+                    "music": ["rock", "metal", "alternative"],
+                    "sports": ["soccer", "basketball"]
+                }
+            },
+            "lucas": {
+                "name": "Lucas",
+                "age": 32,
+                "interested": {
+                    "books": ["history", "biography"],
+                    "music": ["pop", "electronic", "dance"],
+                    "sports": ["running", "cycling"]
+                }
+            }
+        }
+    },
+    {
+        "name": "Maria",
+        "interested": {
+            "books": ["romance", "drama", "fiction"],
+            "music": ["pop", "r&b", "soul"],
+            "sports": ["yoga", "pilates"]
+        },
+        "age": 23,
+        "friends": {
+            "nathan": {
+                "name": "Nathan",
+                "age": 24,
+                "interested": {
+                    "books": ["science fiction", "fantasy"],
+                    "music": ["rock", "indie", "punk"],
+                    "sports": ["basketball", "soccer"]
+                }
+            },
+            "olivia": {
+                "name": "Olivia",
+                "age": 22,
+                "interested": {
+                    "books": ["mystery", "thriller", "crime"],
+                    "music": ["pop", "electronic", "dance"],
+                    "sports": ["swimming", "running"]
+                }
+            }
+        }
+    },
+    {
+        "name": "Peter",
+        "interested": {
+            "books": ["science fiction", "mystery", "thriller"],
+            "music": ["rock", "metal", "punk"],
+            "sports": ["basketball", "football"]
+        },
+        "age": 19,
+        "friends": {
+            "quinn": {
+                "name": "Quinn",
+                "age": 18,
+                "interested": {
+                    "books": ["romance", "drama", "teenage"],
+                    "music": ["pop", "r&b", "hip hop"],
+                    "sports": ["soccer", "swimming"]
+                }
+            },
+            "ryan": {
+                "name": "Ryan",
+                "age": 20,
+                "interested": {
+                    "books": ["fantasy", "adventure", "fiction"],
+                    "music": ["indie", "folk", "alternative"],
+                    "sports": ["cycling", "hiking"]
+                }
+            }
+        }
+    },
+    {
+        "name": "Samantha",
+        "interested": {
+            "books": ["romance", "drama", "fiction"],
+            "music": ["pop", "electronic", "dance"],
+            "sports": ["running", "yoga"]
+        },
+        "age": 24,
+        "friends": {
+            "tom": {
+                "name": "Tom",
+                "age": 25,
+                "interested": {
+                    "books": ["science fiction", "fantasy"],
+                    "music": ["rock", "indie", "punk"],
+                    "sports": ["basketball", "soccer"]
+                }
+            },
+            "umberto": {
+                "name": "Umberto",
+                "age": 23,
+                "interested": {
+                    "books": ["mystery", "thriller", "crime"],
+                    "music": ["pop", "electronic", "hip hop"],
+                    "sports": ["swimming", "climbing"]
+                }
+            }
+        }
+    },
+    {
+        "name": "Victoria",
+        "interested": {
+            "books": ["history", "biography", "non-fiction"],
+            "music": ["classical", "jazz", "blues"],
+            "sports": ["tennis", "cycling"]
+        },
+        "age": 28,
+        "friends": {
+            "william": {
+                "name": "William",
+                "age": 29,
+                "interested": {
+                    "books": ["science fiction", "fantasy"],
+                    "music": ["rock", "metal", "punk"],
+                    "sports": ["football", "basketball"]
+                }
+            },
+            "xavier": {
+                "name": "Xavier",
+                "age": 27,
+                "interested": {
+                    "books": ["mystery", "crime", "thriller"],
+                    "music": ["pop", "electronic", "dance"],
+                    "sports": ["swimming", "running"]
+                }
+            }
+        }
+    },
+    {
+        "name": "Yvonne",
+        "interested": {
+            "books": ["romance", "drama", "fiction"],
+            "music": ["pop", "r&b", "soul"],
+            "sports": ["pilates", "yoga"]
+        },
+        "age": 26,
+        "friends": {
+            "zac": {
+                "name": "Zac",
+                "age": 27,
+                "interested": {
+                    "books": ["science fiction", "fantasy"],
+                    "music": ["rock", "indie", "punk"],
+                    "sports": ["basketball", "soccer"]
+                }
+            },
+            "anna": {
+                "name": "Anna",
+                "age": 25,
+                "interested": {
+                    "books": ["mystery", "thriller", "crime"],
+                    "music": ["pop", "electronic", "dance"],
+                    "sports": ["swimming", "running"]
+                }
+            }
+        }
+    },
+    {
+        "name": "Zane",
+        "interested": {
+            "books": ["science fiction", "mystery", "adventure"],
+            "music": ["rock", "metal", "punk"],
+            "sports": ["basketball", "football"]
+        },
+        "age": 21,
+        "friends": {
+            "alice": {
+                "name": "Alice",
+                "age": 20,
+                "interested": {
+                    "books": ["romance", "drama", "teenage"],
+                    "music": ["pop", "r&b", "hip hop"],
+                    "sports": ["soccer", "swimming"]
+                }
+            },
+            "brandon": {
+                "name": "Brandon",
+                "age": 22,
+                "interested": {
+                    "books": ["fantasy", "fiction"],
+                    "music": ["indie", "folk", "alternative"],
+                    "sports": ["cycling", "hiking"]
+                }
+            }
+        }
+    }                                        
+])
+
+db.persons.find()

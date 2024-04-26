@@ -1,0 +1,12 @@
+use("sample_airbnb")
+
+db.listingsAndReviews.find()
+
+db.listingsAndReviews.aggregate([
+    {$match: {amenities: "Coffee maker"}},
+    {$project: {name: 1}},
+    {$group: {_id: "$name", count: {$sum: 1}}}
+])
+
+
+
